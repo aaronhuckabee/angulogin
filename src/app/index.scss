@@ -1,0 +1,37 @@
+
+// injector
+// endinjector
+
+// bootstrap mods
+.navbar.center .navbar-inner {
+}
+.navbar-nav.center {
+  float: none;
+}
+
+.nav.center > li {
+  display:inline-block;
+  float: none;
+}
+
+.my-form {
+  transition:0.5s linear all;
+  background: white;
+}
+input {
+  &.ng-invalid {
+    background: red;
+    color:white;
+  }
+  &.ng-dirty {
+    color:green;
+  }
+  &.ng-pristine {
+    background: white;
+    color: black;
+  }
+}
+
+.row {
+  margin: 5px 0;
+}

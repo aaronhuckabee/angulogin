@@ -1,0 +1,13 @@
+Started with gulp angular generator, using bootstrap for css.
+
+Decided to create different controllers and templates for each functionality -- login/register/forgot,
+mainly for practice. I'm assuming the thing to do is to create a service that manages logged in status,
+and I could use some additional experience interacting with services passed around among different controllers.
+I'm not yet sure how I should simply emulate a backend . . . I'm thinking either a text file, or just defining an array of possibly values
+within the service.
+
+My approach is to build it using methods that I think will work, and after building I will compare with https://github.com/mrgamer/angular-login-example to see methodology. I know I've at least
+stumbled across things created by mrgamer before, so hopefully his approach can help.
+
+
+

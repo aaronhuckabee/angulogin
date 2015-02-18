@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div ng-include="'components/navbar/navbar.html'"></div>
+
+  <div class="jumbotron text-center">
+      <div class="top">
+          <h4>{{title}}</h4>
+          <h5>{{message}}</h5>
+      </div>
+      <ng-form class='container' name="userForm" ng-hide="cookies.loggedIn || cookies.mailSent">
+          <div class="row" ng-repeat="f in fields">
+              <label class="text-right col-xs-6" for="{{f.name}}">{{f.label}}</label>
+              <!--Basically an either/or below to account for matching/no matching-->
+              <input class="col-xs-3" ng-if="f.match" type="{{f.type}}" name="{{f.name}}" ng-model="f.value" ng-required="f.isRequired" data-match="userForm.{{f.match}}"/>
+              <input class="col-xs-3" ng-if="f.match === undefined" type="{{f.type}}" name="{{f.name}}" ng-model="f.value" ng-required="f.isRequired"/>
+              <!--Errors-->
+              <div ng-show="userForm[f.name].$dirty && userForm[f.name].$invalid && userForm[f.name].$touched">
+                  <span class="error" ng-show="userForm[f.name].$error.required">The field is required.</span>
+                  <div ng-repeat="error in f.extraError">
+                      <span  ng-show="userForm[f.name].$error[error.type]">{{error.message}}</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xs-12 text-center submit-wrapper">
+              <input type="submit" value="submit" ng-click="userFormSubmit()">
+
+          </div>
+      </ng-form>
+  </div>
+</div>
